@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const cors = require("cors");
 // const MailingController = require("./controller/mailing");
 // const Authentication = require("./middleware/authentication");
@@ -33,4 +33,4 @@ app.use("/tujuans", tujuanRouter);
 app.use("/job-details", jobDetailsRouter);
 app.use("/job-results", jobResultRouter);
 
-app.listen(port, () => console.log(`app listening in port ${port}`));
+app.listen(port, "0.0.0.0", () => console.log(`app listening in port ${port}`));
