@@ -8,13 +8,13 @@ const cors = require("cors");
 
 app.use(express.json());
 // allawing cors to fix fetching errors
-// app.use(
-//   cors({
-//     origin: "http://localhost:3001",
-//     methods: ["GET", "POST", "PUT", "DELETE"], // Adjust the allowed methods as per your requirements
-//     allowedHeaders: ["Content-Type", "Authorization", "Accept"], // Adjust the allowed headers as per your requirements
-//   })
-// );
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE"], // Adjust the allowed methods as per your requirements
+    allowedHeaders: ["Content-Type", "Authorization", "Accept"], // Adjust the allowed headers as per your requirements
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("API's Workig");
